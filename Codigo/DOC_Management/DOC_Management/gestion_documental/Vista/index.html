@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOC Management</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="cajafuera">
+        <div class="formulariocaja">
+            <div class="botondeintercambiar">
+                <div id="btn"></div>
+                <button type="button" class="botoncambiarcaja" onclick="login()">Login</button>
+                <button type="button" class="botoncambiarcaja" onclick="registrar()">Registrar</button>
+            </div>
+            <div class="logo">
+                <img src="img/logo.png">
+            </div>
+            <!--Formulario para el login -->
+            <form id="frmlogin" class="grupo-entradas" method="POST" action="login_registrar.php">
+                <input type="text" class="cajaentradatexto" placeholder=" Ingresar usuario" name="txtusuario" required>
+                <input type="password" class="cajaentradatexto" placeholder=" Ingresar contraseña" name="txtpassword" required>
+                <input type="checkbox" class="checkbox">
+                <span id= "span1">Recordar contraseña</span>
+                <button type="submit" class="botonenviar" name="btnloginx">Iniciar sesión</button>
+                <a href="../Modelo/forgot-password.php">Olvide la contraseña</a>
+            </form>
+            <!--Formulario para registrar -->
+            <form id="frmregistrar" class="grupo-entradas" method="POST" action="login_registrar.php">
+                <input type="text" class="cajaentradatexto" placeholder=" Ingresar Nombre " required name="txtnombre">
+                <input type="text" class="cajaentradatexto" placeholder=" Ingresar Apellido " required name="txtapellido">
+                <!--
+                <input type="text" class="cajaentradatexto" placeholder=" Ingresar tipo Documento" required name="txttipo_documento">
+                -->
+                <select name="txtpuesto" style="margin-top: 5px;">
+                  <option value="Administrador" selected>Administrador</option>
+                  <option value="Gestionador">Gestionador</option>
+                  <option value="Radicador">Radicador</option>
+                </select>
+                <input type="text" class="cajaentradatexto" placeholder=" Ingresar correo" required name="txtcorreo">
+                <input type="text" class="cajaentradatexto" placeholder=" Ingresar Celular" required name="txtcelular">
+
+                <input type="text" class="cajaentradatexto" placeholder=" Ingresar usuario" required name="txtusuario">
+                <input type="password" class="cajaentradatexto" placeholder=" Ingresar contraseña" required name="txtpassword">
+
+                <input type="checkbox" class="checkbox">
+                <span id= "span2">He leído y acepto los términos y condiciones de uso.</span>
+                <button type="submit" class="botonenviar" name="btnregistrarx">Registrar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        box = document.getElementsByClassName('formulariocaja')[0];
+        box.style.height = '500px';
+
+
+        var x = document.getElementById("frmlogin");
+        var y = document.getElementById("frmregistrar");
+        var z = document.getElementById("btn");
+
+        function registrar() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+            box = document.getElementsByClassName('formulariocaja')[0];
+            box.style.height = '750px';
+        }
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "550px";
+            z.style.left = "0";
+            box = document.getElementsByClassName('formulariocaja')[0];
+            box.style.height = '500px';
+
+        }
+    </script>
+</body>
+
+</html>
